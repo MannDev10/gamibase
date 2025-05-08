@@ -39,7 +39,8 @@ class Welcome extends CI_Controller {
             ['title' => 'Resident Evil 4', 'genre'=> 'Fantasy', 'cover' => 're4.png', 'platform' => 'steam'],
         ];
 
-		$this->load->view('home', $data);
+		// $this->load->view('home', $data);
+		$this->load->view('create');
 	}
 
 	public function create()

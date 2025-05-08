@@ -119,6 +119,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     .form-group input[type="file"]::-webkit-file-upload-button:hover {
       background-color: #0056b3;
     }
+
+    .form-group select {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background-color: #f1f1f1;
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%204%205'%3E%3Cpath%20fill='none'%20stroke='%23999'%20stroke-width='1'%20d='M0%200l2%202l2-2'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      background-size: 12px;
+    }
+
+    .form-group select:focus {
+      outline: none;
+      border-color: #007bff;
+      background-color: #fff;
+    }
 	</style>
 </head>
 <body>
@@ -142,6 +162,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="form-group">
                         <label for="file">Game Cover</label>
                         <input type="file" id="file" name="file" />
+                    </div>
+                    <div class="form-group">
+                        <label for="platform">Platform</label>
+                        <select id="platform" name="platform">
+                            <option value="" disabled selected>Choose Platform</option>
+                            <option value="nintendo">Nintendo Switch</option>
+                            <option value="playstation">Playstation 5</option>
+                            <option value="steam">Steam</option>
+                            <option value="xbox">Xbox Series X/S</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <button type="submit">Submit</button>
