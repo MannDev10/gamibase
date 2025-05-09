@@ -144,20 +144,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
     <div class="wrapper">
         <div id="container">
-            <h3>Add Game</h3>
-            <form action="<?= site_url('welcome/create'); ?>" method="post" enctype="multipart/form-data">
+            <h3>Edit Game</h3>
+            <form action="<?= site_url('welcome/update/'. $game->id); ?>" method="post" enctype="multipart/form-data">
                 <div style="display: flex; gap: 15px; flex-direction: column; width: 100%">
                     <div class="form-group">
                         <label for="title">Title</label>
-                        <input type="text" id="title" name="title" placeholder="Input game title">
+                        <input type="text" id="title" name="title" placeholder="Input game title" value="<?php echo $game->title; ?>">
                     </div>
                     <div class="form-group">
                         <label for="title">Genre</label>
-                        <input type="text" id="genre" name="genre" placeholder="Eg: Action, Adventure, RPG">
+                        <input type="text" id="genre" name="genre" placeholder="Eg: Action, Adventure, RPG" value="<?php echo $game->genre; ?>">
                     </div>
                     <div class="form-group">
                         <label for="title">Description</label>
-                        <textarea id="desc" name="desc" placeholder="Game description"></textarea>
+                        <textarea id="desc" name="desc" placeholder="Game description"><?php echo $game->desc; ?></textarea>
                     </div>
                     <div class="form-group">
                         <label for="cover">Game Cover</label>
@@ -167,7 +167,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <label for="platform">Platform</label>
                         <select id="platform" name="platform">
                           <?php foreach($platforms as $platform): ?>
-                            <option value="<?= $platform['value'] ?>">
+                            <option value="<?= $platform['value'] ?>" <?= ($platform['value'] == $game->platform) ? 'selected' : '' ?>>
                                 <?= $platform['label'] ?>
                             </option>
                           <?php endforeach; ?>

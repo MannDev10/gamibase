@@ -23,6 +23,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		min-height: 96px;
 	}
 
+    a {
+		color: #003399;
+		background-color: transparent;
+		font-weight: normal;
+		text-decoration: none;
+	}
+
+	a:hover {
+		color: #97310e;
+	}
+
 	p {
 		margin: 0;
 	}
@@ -93,14 +104,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
         <div class="wrapper">
             <?php foreach ($games as $game): ?>
-                <div class="card">
+                <a href="<?= base_url('welcome/detail/'.$game['id']) ?>" class="card">
                     <div style="width: 100%; overflow: hidden; border-radius: 20px">
                         <img src="<?= base_url('upload/' . $game['cover']) ?>" alt="" class="cover">
                     </div>
                     <h4 class="title"><?= $game['title'] ?></h4>
                     <p style="color: #ffffff80; font-size: 14px"><?= $game['genre'] ?></p>
                     <img src="<?= base_url('assets/' . $game['platform'] . '.png') ?>" alt="" style="width: 30px; height: auto; object-fit: contain">
-                </div>
+                </a>
             <?php endforeach; ?>
         </div>
     </div>
